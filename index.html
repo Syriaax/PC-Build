@@ -1,189 +1,518 @@
-
-<h2 class="sr-only">Build-Links und Kabelcheck – AMD X3D 1500€ PC</h2>
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>1500€ Gaming PC Build – Juni 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
 <style>
-  .sec{margin-bottom:2rem}
-  .sec-title{font-size:13px;font-weight:500;color:var(--color-text-tertiary);text-transform:uppercase;letter-spacing:.5px;margin:0 0 10px}
-  .part-row{display:flex;align-items:center;gap:12px;padding:11px 14px;background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);margin-bottom:8px}
-  .part-row:last-child{margin-bottom:0}
-  .part-icon{width:32px;height:32px;border-radius:var(--border-radius-md);display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0}
-  .part-info{flex:1;min-width:0}
-  .part-name{font-size:13px;font-weight:500;color:var(--color-text-primary);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-  .part-price{font-size:12px;color:var(--color-text-secondary)}
-  .part-link{display:inline-flex;align-items:center;gap:4px;font-size:12px;color:var(--color-text-info);text-decoration:none;white-space:nowrap;padding:4px 10px;border:0.5px solid var(--color-border-info);border-radius:var(--border-radius-md);flex-shrink:0}
-  .part-link:hover{background:var(--color-background-info)}
-  .cable-card{background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);overflow:hidden;margin-bottom:8px}
-  .cable-header{padding:11px 14px;display:flex;align-items:center;gap:10px}
-  .cable-source{font-size:11px;color:var(--color-text-tertiary);font-weight:500;text-transform:uppercase;letter-spacing:.4px;min-width:80px}
-  .cable-name{font-size:13px;font-weight:500;color:var(--color-text-primary)}
-  .cable-detail{font-size:11px;color:var(--color-text-secondary);margin-top:1px}
-  .badge-ok{display:inline-flex;align-items:center;gap:3px;font-size:11px;padding:2px 8px;border-radius:var(--border-radius-md);background:var(--color-background-success);color:var(--color-text-success);margin-left:auto;flex-shrink:0}
-  .badge-warn{display:inline-flex;align-items:center;gap:3px;font-size:11px;padding:2px 8px;border-radius:var(--border-radius-md);background:var(--color-background-warning);color:var(--color-text-warning);margin-left:auto;flex-shrink:0}
-  .warn-box{background:var(--color-background-warning);border:0.5px solid var(--color-border-warning);border-radius:var(--border-radius-md);padding:10px 14px;margin-bottom:1.5rem;font-size:13px;color:var(--color-text-warning);display:flex;gap:8px;align-items:flex-start}
-  .ok-box{background:var(--color-background-success);border:0.5px solid var(--color-border-success);border-radius:var(--border-radius-md);padding:10px 14px;margin-bottom:1.5rem;font-size:13px;color:var(--color-text-success);display:flex;gap:8px;align-items:flex-start}
-  .divider{height:0.5px;background:var(--color-border-tertiary);margin:1.5rem 0}
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #0e0f11;
+    --surface: #16181c;
+    --surface2: #1e2026;
+    --border: rgba(255,255,255,0.07);
+    --border2: rgba(255,255,255,0.12);
+    --text: #f0f1f3;
+    --muted: #8a8f9a;
+    --dim: #555a66;
+    --accent: #e8613a;
+    --accent2: #f0824a;
+    --green: #3ecf8e;
+    --yellow: #f0b429;
+    --blue: #4fa3e0;
+    --radius: 12px;
+    --radius-sm: 8px;
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    line-height: 1.6;
+    min-height: 100vh;
+    padding: 0;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    padding: 64px 24px 48px;
+    max-width: 780px;
+    margin: 0 auto;
+  }
+  .hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 20px;
+  }
+  .hero-eyebrow::before {
+    content: '';
+    display: block;
+    width: 20px;
+    height: 2px;
+    background: var(--accent);
+    border-radius: 1px;
+  }
+  .hero h1 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(32px, 6vw, 52px);
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -.02em;
+    margin-bottom: 16px;
+  }
+  .hero h1 span { color: var(--accent); }
+  .hero-sub {
+    font-size: 16px;
+    color: var(--muted);
+    max-width: 520px;
+    line-height: 1.7;
+  }
+
+  /* ── BUDGET BAR ── */
+  .budget-strip {
+    max-width: 780px;
+    margin: 0 auto 40px;
+    padding: 0 24px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+  .bstat {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 18px 20px;
+  }
+  .bstat-label {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    color: var(--dim);
+    margin-bottom: 6px;
+    font-weight: 500;
+  }
+  .bstat-val {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--text);
+  }
+  .bstat-val.green { color: var(--green); }
+
+  /* ── SECTION ── */
+  .section {
+    max-width: 780px;
+    margin: 0 auto 48px;
+    padding: 0 24px;
+  }
+  .section-title {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    color: var(--dim);
+    font-weight: 600;
+    margin-bottom: 16px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  /* ── PART CARD ── */
+  .part-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    margin-bottom: 10px;
+    overflow: hidden;
+    transition: border-color .2s;
+  }
+  .part-card:hover { border-color: var(--border2); }
+  .part-card.existing { border-color: rgba(62,207,142,.2); }
+
+  .part-main {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 16px 18px;
+  }
+  .part-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: var(--radius-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    flex-shrink: 0;
+  }
+  .part-body { flex: 1; min-width: 0; }
+  .part-badges { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 4px; }
+  .badge {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+    padding: 2px 8px;
+    border-radius: 20px;
+  }
+  .badge-orange { background: rgba(232,97,58,.15); color: var(--accent2); }
+  .badge-green  { background: rgba(62,207,142,.12); color: var(--green); }
+  .badge-yellow { background: rgba(240,180,41,.12); color: var(--yellow); }
+  .part-name {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--text);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 2px;
+  }
+  .part-spec {
+    font-size: 12px;
+    color: var(--muted);
+  }
+  .part-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 8px;
+    flex-shrink: 0;
+  }
+  .part-price {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--text);
+  }
+  .part-price.free { color: var(--green); }
+  .part-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--blue);
+    text-decoration: none;
+    padding: 4px 10px;
+    border: 1px solid rgba(79,163,224,.25);
+    border-radius: 20px;
+    transition: background .15s, border-color .15s;
+    white-space: nowrap;
+  }
+  .part-link:hover {
+    background: rgba(79,163,224,.08);
+    border-color: rgba(79,163,224,.5);
+  }
+  .link-icon { font-size: 10px; }
+
+  /* ── DIVIDER inside card ── */
+  .part-note {
+    border-top: 1px solid var(--border);
+    padding: 10px 18px;
+    font-size: 12px;
+    color: var(--muted);
+    line-height: 1.5;
+  }
+  .part-note strong { color: var(--text); }
+
+  /* ── CABLE SECTION ── */
+  .cable-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  @media (max-width: 540px) { .cable-grid { grid-template-columns: 1fr; } }
+  .cable-item {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 12px 14px;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .cable-check {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: rgba(62,207,142,.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  .cable-check svg { width: 11px; height: 11px; }
+  .cable-name { font-size: 13px; font-weight: 500; color: var(--text); }
+  .cable-from { font-size: 11px; color: var(--dim); margin-top: 2px; }
+
+  /* ── ALERT ── */
+  .alert {
+    border-radius: var(--radius-sm);
+    padding: 12px 16px;
+    font-size: 13px;
+    line-height: 1.6;
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    margin-bottom: 14px;
+  }
+  .alert-warn { background: rgba(240,180,41,.08); border: 1px solid rgba(240,180,41,.2); color: #c9a030; }
+  .alert-info { background: rgba(62,207,142,.06); border: 1px solid rgba(62,207,142,.15); color: var(--green); }
+  .alert-icon { flex-shrink: 0; font-size: 15px; margin-top: 1px; }
+
+  /* ── FOOTER ── */
+  .footer {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 24px 24px 48px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: gap;
+    gap: 12px;
+  }
+  .footer-note { font-size: 12px; color: var(--dim); }
+  .footer-total {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--text);
+  }
+  .footer-total span { color: var(--accent); }
+
+  /* ── PROGRESS BAR ── */
+  .progress-wrap { margin-top: 10px; }
+  .progress-track {
+    height: 3px;
+    background: var(--border);
+    border-radius: 2px;
+    overflow: hidden;
+  }
+  .progress-fill {
+    height: 100%;
+    width: 96%;
+    background: linear-gradient(90deg, var(--accent), var(--accent2));
+    border-radius: 2px;
+  }
+  .progress-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+    color: var(--dim);
+    margin-top: 5px;
+  }
+
+  @media (max-width: 600px) {
+    .budget-strip { grid-template-columns: 1fr 1fr; }
+    .bstat:last-child { grid-column: span 2; }
+    .part-main { flex-wrap: wrap; }
+    .part-right { flex-direction: row; align-items: center; }
+  }
 </style>
+</head>
+<body>
 
-<div class="sec" style="padding-top:1rem">
-  <div class="sec-title">Kauflinks – alle Teile (Geizhals Preisvergleich)</div>
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-eyebrow">Mate Hetero PC</div>
+  <h1>Maté Kovacs<br><span>1.500 €</span> PC.</h1>
+  <p class="hero-sub">Preise sind Actually gut</p>
+</div>
 
-  <div class="part-row">
-    <div class="part-icon" style="background:#FAECE7">🔲</div>
-    <div class="part-info">
-      <div class="part-name">AMD Ryzen 7 9800X3D</div>
-      <div class="part-price">≈ 389 € · Boxed (ohne Kühler)</div>
+<!-- BUDGET STATS -->
+<div class="budget-strip">
+  <div class="bstat">
+    <div class="bstat-label">Gesamtpreis</div>
+    <div class="bstat-val">≈ 1.443 €</div>
+    <div class="progress-wrap">
+      <div class="progress-track"><div class="progress-fill"></div></div>
+      <div class="progress-labels"><span>0 €</span><span>1.500 €</span></div>
     </div>
-    <a class="part-link" href="https://geizhals.de/amd-ryzen-7-9800x3d-100-100001084wof-a3336051.html" target="_blank"><i class="ti ti-external-link" aria-hidden="true"></i>Geizhals</a>
   </div>
-
-  <div class="part-row">
-    <div class="part-icon" style="background:#EAF3DE">🖥</div>
-    <div class="part-info">
-      <div class="part-name">MSI B850 Gaming Plus WIFI</div>
-      <div class="part-price">≈ 160 € · AM5, DDR5, WiFi 7</div>
-    </div>
-    <a class="part-link" href="https://geizhals.de/msi-b850-gaming-plus-wifi-7e56-001r-a3383264.html" target="_blank"><i class="ti ti-external-link" aria-hidden="true"></i>Geizhals</a>
+  <div class="bstat">
+    <div class="bstat-label">Budget</div>
+    <div class="bstat-val">1.500 €</div>
   </div>
-
-  <div class="part-row">
-    <div class="part-icon" style="background:#E6F1FB">🎮</div>
-    <div class="part-info">
-      <div class="part-name">AMD Radeon RX 9070 16GB</div>
-      <div class="part-price">≈ 559–580 € · z.B. Sapphire Pulse oder ASUS TUF</div>
-    </div>
-    <a class="part-link" href="https://geizhals.de/asus-radeon-rx-9070-v191865.html" target="_blank"><i class="ti ti-external-link" aria-hidden="true"></i>Geizhals</a>
-  </div>
-
-  <div class="part-row">
-    <div class="part-icon" style="background:#FFF3CD">💾</div>
-    <div class="part-info">
-      <div class="part-name">Kingston FURY Beast DDR5-5200 32GB</div>
-      <div class="part-price">≈ 110–120 € · 2× 16GB, AM5-kompatibel</div>
-    </div>
-    <a class="part-link" href="https://geizhals.de/kingston-fury-beast-dimm-ddr5-v88872.html" target="_blank"><i class="ti ti-external-link" aria-hidden="true"></i>Geizhals</a>
-  </div>
-
-  <div class="part-row">
-    <div class="part-icon" style="background:#EEEDFE">🌬</div>
-    <div class="part-info">
-      <div class="part-name">Thermalright Peerless Assassin 120 SE</div>
-      <div class="part-price">≈ 35 € · Dual-Tower, AM5 Halterung dabei</div>
-    </div>
-    <a class="part-link" href="https://geizhals.de/?fs=Thermalright+Peerless+Assassin+120+SE" target="_blank"><i class="ti ti-external-link" aria-hidden="true"></i>Geizhals</a>
-  </div>
-
-  <div class="part-row">
-    <div class="part-icon" style="background:#F1EFE8">🏠</div>
-    <div class="part-info">
-      <div class="part-name">Corsair 4000D Airflow</div>
-      <div class="part-price">≈ 90 € · ATX, Mesh-Front, 2× 120mm Lüfter</div>
-    </div>
-    <a class="part-link" href="https://geizhals.de/corsair-4000d-v40270.html" target="_blank"><i class="ti ti-external-link" aria-hidden="true"></i>Geizhals</a>
-  </div>
-
-  <div class="part-row">
-    <div class="part-icon" style="background:#FBEAF0">⚡</div>
-    <div class="part-info">
-      <div class="part-name">be quiet! Pure Power 12 850W</div>
-      <div class="part-price">≈ 85–95 € · 80+ Gold, ATX 3.1, PCIe 5.1</div>
-    </div>
-    <a class="part-link" href="https://geizhals.de/be-quiet-pure-power-12-m-850w-atx-3-0-bn344-a2884020.html" target="_blank"><i class="ti ti-external-link" aria-hidden="true"></i>Geizhals</a>
-  </div>
-
-  <div class="part-row" style="border-color:var(--color-border-success)">
-    <div class="part-icon" style="background:#E1F5EE">✅</div>
-    <div class="part-info">
-      <div class="part-name">Innovation IT SuperiorQ 1TB SATA</div>
-      <div class="part-price">Bereits vorhanden — kein Kauf nötig</div>
-    </div>
-    <span style="font-size:12px;color:var(--color-text-success);padding:4px 10px;border:0.5px solid var(--color-border-success);border-radius:var(--border-radius-md)">0 €</span>
+  <div class="bstat">
+    <div class="bstat-label">Puffer</div>
+    <div class="bstat-val green">≈ 57 €</div>
   </div>
 </div>
 
-<div class="divider"></div>
+<!-- PARTS -->
+<div class="section">
+  <div class="section-title">Komponenten</div>
 
-<div class="sec">
-  <div class="sec-title">Kabelcheck — was liegt bei?</div>
-
-  <div class="ok-box" style="margin-bottom:1rem">
-    <i class="ti ti-circle-check" style="font-size:16px;flex-shrink:0;margin-top:1px" aria-hidden="true"></i>
-    <span>Fast alles ist abgedeckt — du brauchst <strong>kein einziges zusätzliches Kabel</strong> zu kaufen. Hier die Details:</span>
-  </div>
-
-  <div class="cable-card">
-    <div class="cable-header">
-      <div>
-        <div style="font-size:10px;color:var(--color-text-tertiary);text-transform:uppercase;letter-spacing:.4px;margin-bottom:2px">Netzteil</div>
-        <div class="cable-name">24-Pin ATX Mainboard-Strom</div>
-        <div class="cable-detail">Liegt beim be quiet! Pure Power 12 bei</div>
+  <!-- CPU -->
+  <div class="part-card">
+    <div class="part-main">
+      <div class="part-icon" style="background:#2a1a14">🔲</div>
+      <div class="part-body">
+        <div class="part-badges">
+          <span class="badge badge-orange">CPU</span>
+          <span class="badge badge-orange">Bester Gaming-Chip 2026</span>
+        </div>
+        <div class="part-name">AMD Ryzen 7 9800X3D</div>
+        <div class="part-spec">8 Kerne / 16 Threads · 4,7–5,2 GHz · AM5 · Zen 5 · 3D V-Cache · 120W TDP · kein Kühler beiliegend</div>
       </div>
-      <span class="badge-ok"><i class="ti ti-check" aria-hidden="true"></i>dabei</span>
-    </div>
-  </div>
-  <div class="cable-card">
-    <div class="cable-header">
-      <div>
-        <div style="font-size:10px;color:var(--color-text-tertiary);text-transform:uppercase;letter-spacing:.4px;margin-bottom:2px">Netzteil</div>
-        <div class="cable-name">8-Pin EPS CPU-Strom</div>
-        <div class="cable-detail">Liegt beim be quiet! Pure Power 12 bei</div>
+      <div class="part-right">
+        <div class="part-price">≈ 389 €</div>
+        <a class="part-link" href="https://geizhals.de/amd-ryzen-7-9800x3d-100-100001084wof-a3336051.html" target="_blank">
+          <span class="link-icon">↗</span> Geizhals
+        </a>
       </div>
-      <span class="badge-ok"><i class="ti ti-check" aria-hidden="true"></i>dabei</span>
     </div>
-  </div>
-  <div class="cable-card">
-    <div class="cable-header">
-      <div>
-        <div style="font-size:10px;color:var(--color-text-tertiary);text-transform:uppercase;letter-spacing:.4px;margin-bottom:2px">Netzteil</div>
-        <div class="cable-name">PCIe 12V-2x6 für RX 9070</div>
-        <div class="cable-detail">Liegt beim be quiet! Pure Power 12 bei — ATX 3.1 / PCIe 5.1 ready</div>
-      </div>
-      <span class="badge-ok"><i class="ti ti-check" aria-hidden="true"></i>dabei</span>
-    </div>
-  </div>
-  <div class="cable-card">
-    <div class="cable-header">
-      <div>
-        <div style="font-size:10px;color:var(--color-text-tertiary);text-transform:uppercase;letter-spacing:.4px;margin-bottom:2px">Netzteil</div>
-        <div class="cable-name">SATA-Stromkabel</div>
-        <div class="cable-detail">Liegt beim be quiet! Pure Power 12 bei (mehrere SATA-Stecker auf einem Kabel)</div>
-      </div>
-      <span class="badge-ok"><i class="ti ti-check" aria-hidden="true"></i>dabei</span>
-    </div>
-  </div>
-  <div class="cable-card">
-    <div class="cable-header">
-      <div>
-        <div style="font-size:10px;color:var(--color-text-tertiary);text-transform:uppercase;letter-spacing:.4px;margin-bottom:2px">Mainboard</div>
-        <div class="cable-name">SATA-Datenkabel (1×)</div>
-        <div class="cable-detail">Das MSI B850 Gaming Plus WIFI legt laut Handbuch 1× SATA-Kabel bei</div>
-      </div>
-      <span class="badge-ok"><i class="ti ti-check" aria-hidden="true"></i>dabei</span>
-    </div>
-  </div>
-  <div class="cable-card">
-    <div class="cable-header">
-      <div>
-        <div style="font-size:10px;color:var(--color-text-tertiary);text-transform:uppercase;letter-spacing:.4px;margin-bottom:2px">Mainboard</div>
-        <div class="cable-name">WiFi-Antenne</div>
-        <div class="cable-detail">EZ Wi-Fi Antenne liegt bei</div>
-      </div>
-      <span class="badge-ok"><i class="ti ti-check" aria-hidden="true"></i>dabei</span>
-    </div>
-  </div>
-  <div class="cable-card">
-    <div class="cable-header">
-      <div>
-        <div style="font-size:10px;color:var(--color-text-tertiary);text-transform:uppercase;letter-spacing:.4px;margin-bottom:2px">Gehäuse</div>
-        <div class="cable-name">Frontpanel-Kabel (Power, Reset, USB, Audio)</div>
-        <div class="cable-detail">Alle Frontpanel-Kabel liegen beim Corsair 4000D Airflow bei</div>
-      </div>
-      <span class="badge-ok"><i class="ti ti-check" aria-hidden="true"></i>dabei</span>
-    </div>
+    <div class="part-note">Kauf die Boxed Version ohne Stock Kühler</div>
   </div>
 
-  <div class="warn-box" style="margin-top:12px;margin-bottom:0">
-    <i class="ti ti-alert-triangle" style="font-size:16px;flex-shrink:0;margin-top:1px" aria-hidden="true"></i>
-    <div>
-      <strong>Einzige Besonderheit:</strong> Das Netzteil ist <em>semi-modular</em> — das heißt, ATX 24-Pin und EPS 8-Pin sind fest angeschlossen, die PCIe- und SATA-Kabel werden bei Bedarf eingesteckt. Alle benötigten Kabel liegen im Lieferumfang. Du musst nichts extra kaufen.
+  <!-- Mainboard -->
+  <div class="part-card">
+    <div class="part-main">
+      <div class="part-icon" style="background:#14201a">🖥</div>
+      <div class="part-body">
+        <div class="part-badges"><span class="badge badge-orange">Mainboard</span></div>
+        <div class="part-name">MSI B850 Gaming Plus WIFI</div>
+        <div class="part-spec">AM5 · B850 · PCIe 5.0 · M.2 Gen5 · WiFi 7 · 5G LAN · 4× SATA · DDR5</div>
+      </div>
+      <div class="part-right">
+        <div class="part-price">≈ 160 €</div>
+        <a class="part-link" href="https://geizhals.de/msi-b850-gaming-plus-wifi-7e56-001r-a3383264.html" target="_blank">
+          <span class="link-icon">↗</span> Geizhals
+        </a>
+      </div>
     </div>
+    <div class="part-note">Solides AM5-Board mit allem was nötig ist. <strong>4× SATA-Ports</strong> für die Sata SSD. WiFi 7 und 5G LAN onboard</div>
+  </div>
+
+  <!-- GPU -->
+  <div class="part-card">
+    <div class="part-main">
+      <div class="part-icon" style="background:#14181f">🎮</div>
+      <div class="part-body">
+        <div class="part-badges"><span class="badge badge-orange">GPU</span></div>
+        <div class="part-name">AMD Radeon RX 9070 · 16 GB GDDR6</div>
+        <div class="part-spec">RDNA 4 · 16 GB · PCIe 5.0 · 1440p &amp; 4K · FSR 4 · z.B. Sapphire Pulse oder ASUS TUF</div>
+      </div>
+      <div class="part-right">
+        <div class="part-price">≈ 559 €</div>
+        <a class="part-link" href="https://geizhals.de/asus-radeon-rx-9070-v191865.html" target="_blank">
+          <span class="link-icon">↗</span> Geizhals
+        </a>
+      </div>
+    </div>
+    <div class="part-note">Bestes Preis-Leistungs-Verhältnis 2026. Schlägt die RTX 5070 in vielen Titeln bei deutlich niedrigerem Preis. Perfekte Synergie mit dem Ryzen X3D auf AMD-Plattform. Empfehlung: <strong>Sapphire Pulse</strong> (leiser, günstig) oder <strong>ASUS TUF</strong> (robuster für Dauerlast).</div>
+  </div>
+
+  <!-- RAM -->
+  <div class="part-card">
+    <div class="part-main">
+      <div class="part-icon" style="background:#201e12">💾</div>
+      <div class="part-body">
+        <div class="part-badges">
+          <span class="badge badge-orange">RAM</span>
+          <span class="badge badge-yellow">Preismarkt beachten</span>
+        </div>
+        <div class="part-name">Kingston FURY Beast DDR5-5200 · 32 GB</div>
+        <div class="part-spec">2× 16 GB · CL40 · AM5-kompatibel · DDR5 · Downgrade wegen explodierender RAM-Preise</div>
+      </div>
+      <div class="part-right">
+        <div class="part-price">≈ 115 €</div>
+        <a class="part-link" href="https://geizhals.de/kingston-fury-beast-dimm-ddr5-v88872.html" target="_blank">
+          <span class="link-icon">↗</span> Geizhals
+        </a>
+      </div>
+    </div>
+    <div class="part-note">DDR5-6000 32GB kostet aktuell 435–480 € also viermal mehr. Der Gaming-Unterschied zu DDR5-5200 am 9800X3D beträgt nur ~2–3%. Sobald die Preise fallen, einfach nachrüsten.</div>
+  </div>
+
+  <!-- SSD existing -->
+  <div class="part-card existing">
+    <div class="part-main">
+      <div class="part-icon" style="background:#12201a">✅</div>
+      <div class="part-body">
+        <div class="part-badges">
+          <span class="badge badge-green">SSD</span>
+          <span class="badge badge-green">Bereits vorhanden</span>
+        </div>
+        <div class="part-name">Innovation IT SuperiorQ 1TB SATA</div>
+        <div class="part-spec">SATA III · 2,5 Zoll · einziges Laufwerk · als Boot-Device nutzen</div>
+      </div>
+      <div class="part-right">
+        <div class="part-price free">0 €</div>
+      </div>
+    </div>
+    <div class="part-note">Im BIOS als primäres Boot-Device setzen. Alle B850-Boards booten problemlos von SATA. Über SATA-Datenkabel (liegt beim Mainboard bei) und SATA-Stromkabel (liegt beim Netzteil bei) anschließen.</div>
+  </div>
+
+  <!-- Kühler -->
+  <div class="part-card">
+    <div class="part-main">
+      <div class="part-icon" style="background:#1a1420">🌬</div>
+      <div class="part-body">
+        <div class="part-badges"><span class="badge badge-orange">CPU-Kühler</span></div>
+        <div class="part-name">Thermalright Peerless Assassin 120 SE</div>
+        <div class="part-spec">Dual-Tower · 2× 120mm · bis 250W TDP · AM5-Halterung inklusive · kein RGB</div>
+      </div>
+      <div class="part-right">
+        <div class="part-price">≈ 35 €</div>
+        <a class="part-link" href="https://geizhals.de/?fs=Thermalright+Peerless+Assassin+120+SE" target="_blank">
+          <span class="link-icon">↗</span> Geizhals
+        </a>
+      </div>
+    </div>
+    <div class="part-note">Schlägt Kühler für das doppelte bis dreifache des Preises. Absolute Empfehlung in der Preis-Leistungs-Klasse. AM5-Halterung ist im Lieferumfang.</div>
+  </div>
+
+  <!-- Gehäuse -->
+  <div class="part-card">
+    <div class="part-main">
+      <div class="part-icon" style="background:#1c1c1c">🏠</div>
+      <div class="part-body">
+        <div class="part-badges"><span class="badge badge-orange">Gehäuse</span></div>
+        <div class="part-name">Corsair 4000D Airflow</div>
+        <div class="part-spec">ATX Midi-Tower · Mesh-Front · 2× 120mm Lüfter · USB-C · 2,5"-Einschub für SATA-SSD</div>
+      </div>
+      <div class="part-right">
+        <div class="part-price">≈ 90 €</div>
+        <a class="part-link" href="https://geizhals.de/corsair-4000d-v40270.html" target="_blank">
+          <span class="link-icon">↗</span> Geizhals
+        </a>
+      </div>
+    </div>
+    <div class="part-note">Bewährtester Airflow-Klassiker in der Klasse. <strong>2,5"-Einschub</strong> für die bestehende SATA-SSD direkt verfügbar. Zwei 120mm-Lüfter sind bereits beiliegend.</div>
+  </div>
+
+  <!-- Netzteil -->
+  <div class="part-card">
+    <div class="part-main">
+      <div class="part-icon" style="background:#1f1420">⚡</div>
+      <div class="part-body">
+        <div class="part-badges"><span class="badge badge-orange">Netzteil</span></div>
+        <div class="part-name">be quiet! Pure Power 12 · 850W</div>
+        <div class="part-spec">80 PLUS Gold · ATX 3.1 · PCIe 5.1 · semi-modular · 12V-2x6 Kabel · 6× SATA · 1× EPS 8-Pin</div>
+      </div>
+      <div class="part-right">
+        <div class="part-price">≈ 90 €</div>
+        <a class="part-link" href="https://geizhals.de/be-quiet-pure-power-12-m-850w-atx-3-0-bn344-a2884020.html" target="_blank">
+          <span class="link-icon">↗</span> Geizhals
+        </a>
+      </div>
+    </div>
+    <div class="part-note">850W gibt Headroom für 9800X3D (120W) + RX 9070 (~200W). <strong>Alle nötigen Kabel liegen bei</strong> – kein einziges Extra-Kabel nötig.</div>
   </div>
 </div>
+
+</body>
+</html>
